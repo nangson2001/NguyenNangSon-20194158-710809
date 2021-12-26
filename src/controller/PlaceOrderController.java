@@ -13,13 +13,14 @@ import common.exception.InvalidDeliveryInfoException;
 import entity.invoice.Invoice;
 import entity.order.Order;
 import entity.order.OrderMedia;
+import entity.shipping.ShippingFeeCalculator;
 import views.screen.popup.PopupScreen;
 
 /**
  * This class controls the flow of place order usecase in our AIMS project
  * @author nguyenlm
  */
-public class PlaceOrderController extends BaseController{
+public class PlaceOrderController extends BaseController implements ShippingFeeCalculator {
 
     /**
      * Just for logging purpose
@@ -105,6 +106,8 @@ public class PlaceOrderController extends BaseController{
      * @param order
      * @return shippingFee
      */
+    //Nguyễn Năng Sơn 20194158
+    @Override
     public int calculateShippingFee(Order order){
         Random rand = new Random();
         int fees = (int)( ( (rand.nextFloat()*10)/100 ) * order.getAmount() );

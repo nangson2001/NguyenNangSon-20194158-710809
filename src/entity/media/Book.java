@@ -138,10 +138,8 @@ public class Book extends Media {
 		}
     }
 
-    @Override
-    public List getAllMedia() {
-        return null;
-    }
+    //Nguyễn Năng Sơn 20194158
+    //Đã xóa phương thức Overide
 
 
     @Override
